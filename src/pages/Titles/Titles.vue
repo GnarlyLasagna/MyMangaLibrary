@@ -1,5 +1,7 @@
 <template>
-  <section>FILTER</section>
+  <section>
+    <TitleFilter @change-filter="setFilters"></TitleFilter>
+  </section>
   <section>
     <base-card>
       <div class="controls">
@@ -22,16 +24,37 @@
 
 <script>
 import TitleItem from '../../components/titles/TitleItem.vue';
+import TitleFilter from '../../components/titles/TitleFilter.vue';
+
 export default {
   components: {
     TitleItem,
+    TitleFilter,
   },
+  data() {
+    return {
+      isLoading: false,
+      error: null,
+      activeFilters: {
+        frontend: true,
+        backend: true,
+        career: true,
+      },
+    };
+  },
+
   computed: {
     filteredTitles() {
       return this.$store.getters['titles/titles'];
     },
     hasTitles() {
       return this.$store.getters['titles/hasTitles'];
+    },
+  },
+  methods: {
+    setFilters(updatedFilters) {
+      this.activeFilters = updatedFilters;
+      // Now updaye filtered coaches to reflect changes in active filters
     },
   },
 };

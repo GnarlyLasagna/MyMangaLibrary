@@ -17,6 +17,7 @@ export default {
           // description: 30,
           // read: 30,
           // unread: 30,
+          // genre: 30,
         },
         {
           id: 'c2',
@@ -25,10 +26,6 @@ export default {
           coverart: '',
           collected: 10,
           volumes: [{}],
-
-          // description: 30,
-          // read: 30,
-          // unread: 30,
         },
       ],
     };
