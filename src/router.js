@@ -15,6 +15,7 @@ const router = createRouter({
     {
       path: '/titles/:id',
       component: Volumes,
+      props: true,
       children: [
         { path: 'details', component: VolumeDetails }, // /coaches/c1/contact
       ],
