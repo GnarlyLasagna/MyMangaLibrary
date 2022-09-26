@@ -2,6 +2,8 @@
   <li>
     <h3>{{ title }}</h3>
     <h4>{{ author }}</h4>
+    <h4>Number of Volumes: {{ volumes }}</h4>
+
     <!-- <div>
       <base-badge v-for="area in areas" :key="area" :type="area" :title="area"></base-badge>
     </div> -->

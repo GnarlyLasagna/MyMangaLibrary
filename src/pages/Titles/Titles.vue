@@ -15,6 +15,7 @@
           :id="title.id"
           :title="title.title"
           :author="title.author"
+          :volumes="title.volumes"
         ></TitleItem>
       </ul>
       <h3 v-else>No Titles Found</h3>
