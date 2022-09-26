@@ -50,9 +50,15 @@
       />
       <p v-if="!volumes.isValid">volumes must be greater than 0.</p>
     </div>
-    <div class="form-control" :class="{ invalid: !areas.isValid }">
+    <div class="form-control" :class="{ invalid: !genre.isValid }">
       <!-- /////////////////////////// -->
-      <h3>Select Genre</h3>
+      <label for="">Genre</label>
+      <input
+        type="text"
+        id="genre"
+        v-model.trim="coverart.val"
+        @blur="clearValidity('genre')"
+      />
       <!-- <div>
         <input
           type="checkbox"
@@ -63,7 +69,7 @@
         />
         <label for="career">Career Advisory</label>
       </div> -->
-      <p v-if="!areas.isValid">At least one expertise must be selected.</p>
+      <p v-if="!genre.isValid">At least one genre must be typed.</p>
     </div>
     <p v-if="!formIsValid">Please fix the above errors and submit again.</p>
     <base-button>Register</base-button>
@@ -93,7 +99,7 @@ export default {
         val: null,
         isValid: true,
       },
-      areas: {
+      genre: {
         val: [],
         isValid: true,
       },
@@ -122,8 +128,8 @@ export default {
         this.volumes.isValid = false;
         this.formIsValid = false;
       }
-      if (this.areas.val.length === 0) {
-        this.areas.isValid = false;
+      if (this.genre.val.length === 0) {
+        this.genre.isValid = false;
         this.formIsValid = false;
       }
     },
@@ -139,7 +145,7 @@ export default {
         last: this.author.val,
         desc: this.coverart.val,
         volumes: this.volumes.val,
-        areas: this.areas.val,
+        genre: this.genre.val,
       };
 
       this.$emit('save-data', formData);
