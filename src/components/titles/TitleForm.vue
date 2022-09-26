@@ -56,7 +56,7 @@
       <input
         type="text"
         id="genre"
-        v-model.trim="coverart.val"
+        v-model.trim="genre.val"
         @blur="clearValidity('genre')"
       />
       <!-- <div>
@@ -141,13 +141,13 @@ export default {
       }
 
       const formData = {
-        first: this.title.val,
-        last: this.author.val,
-        desc: this.coverart.val,
+        title: this.title.val,
+        author: this.author.val,
+        coverart: this.coverart.val,
         volumes: this.volumes.val,
         genre: this.genre.val,
       };
-
+      console.log(formData);
       this.$emit('save-data', formData);
     },
   },

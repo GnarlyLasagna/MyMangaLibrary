@@ -6,6 +6,11 @@ const store = createStore({
   modules: {
     titles: titlesModule,
   },
+  state() {
+    return {
+      userId: 'c3',
+    };
+  },
 });
 
 export default store;

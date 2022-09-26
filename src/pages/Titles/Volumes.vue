@@ -1,7 +1,7 @@
 <template>
   <section>
     <base-card>
-      <!-- <h2>{{ id }}</h2> -->
+      <h2>{{ id }}</h2>
       <h2>Title: {{ this.selectedTitle.title }}</h2>
       <h2>Volumes: {{ this.selectedTitle.volumes }}</h2>
 
