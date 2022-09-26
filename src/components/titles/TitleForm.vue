@@ -1,14 +1,14 @@
 <template>
   <form @submit.prevent="submitForm">
-    <div class="form-control" :class="{ invalid: !firstName.isValid }">
-      <label for="firstname">Manga Title</label>
+    <div class="form-control" :class="{ invalid: !title.isValid }">
+      <label for="title">Manga Title</label>
       <input
         type="text"
-        id="firstname"
-        v-model.trim="firstName.val"
-        @blur="clearValidity('firstName')"
+        id="title"
+        v-model.trim="title.val"
+        @blur="clearValidity('title')"
       />
-      <p v-if="!firstName.isValid">Firstname must not be empty.</p>
+      <p v-if="!title.isValid">title must not be empty.</p>
     </div>
     <div class="form-control" :class="{ invalid: !lastName.isValid }">
       <label for="lastname">Author</label>
@@ -77,7 +77,7 @@ export default {
   emits: ['save-data'],
   data() {
     return {
-      firstName: {
+      title: {
         val: '',
         isValid: true,
       },
@@ -106,8 +106,8 @@ export default {
     },
     validateForm() {
       this.formIsValid = true;
-      if (this.firstName.val === '') {
-        this.firstName.isValid = false;
+      if (this.title.val === '') {
+        this.title.isValid = false;
         this.formIsValid = false;
       }
       if (this.lastName.val === '') {
@@ -135,7 +135,7 @@ export default {
       }
 
       const formData = {
-        first: this.firstName.val,
+        first: this.title.val,
         last: this.lastName.val,
         desc: this.description.val,
         rate: this.rate.val,
