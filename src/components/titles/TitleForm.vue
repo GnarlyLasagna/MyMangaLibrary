@@ -10,25 +10,25 @@
       />
       <p v-if="!title.isValid">title must not be empty.</p>
     </div>
-    <div class="form-control" :class="{ invalid: !lastName.isValid }">
-      <label for="lastname">Author</label>
+    <div class="form-control" :class="{ invalid: !author.isValid }">
+      <label for="author">Author</label>
       <input
         type="text"
-        id="lastname"
-        v-model.trim="lastName.val"
-        @blur="clearValidity('lastName')"
+        id="author"
+        v-model.trim="author.val"
+        @blur="clearValidity('author')"
       />
-      <p v-if="!lastName.isValid">Lastname must not be empty.</p>
+      <p v-if="!author.isValid">author must not be empty.</p>
     </div>
-    <div class="form-control" :class="{ invalid: !lastName.isValid }">
+    <div class="form-control" :class="{ invalid: !coverart.isValid }">
       <label for="">Cover Art</label>
       <input
         type="text"
-        id="lastname"
-        v-model.trim="lastName.val"
-        @blur="clearValidity('lastName')"
+        id="coverart"
+        v-model.trim="coverart.val"
+        @blur="clearValidity('coverart')"
       />
-      <p v-if="!lastName.isValid">Lastname must not be empty.</p>
+      <p v-if="!coverart.isValid">coverart must not be empty.</p>
     </div>
     <!-- <div class="form-control" :class="{ invalid: !description.isValid }">
       <label for="description">Cover Art</label>
@@ -40,15 +40,15 @@
       ></textarea>
       <p v-if="!description.isValid">Description must not be empty.</p>
     </div> -->
-    <div class="form-control" :class="{ invalid: !rate.isValid }">
-      <label for="rate">Total number of Volumes</label>
+    <div class="form-control" :class="{ invalid: !volumes.isValid }">
+      <label for="volumes">Total number of Volumes</label>
       <input
         type="number"
-        id="rate"
-        v-model.number="rate.val"
-        @blur="clearValidity('rate')"
+        id="volumes"
+        v-model.number="volumes.val"
+        @blur="clearValidity('volumes')"
       />
-      <p v-if="!rate.isValid">Rate must be greater than 0.</p>
+      <p v-if="!volumes.isValid">volumes must be greater than 0.</p>
     </div>
     <div class="form-control" :class="{ invalid: !areas.isValid }">
       <!-- /////////////////////////// -->
@@ -81,15 +81,15 @@ export default {
         val: '',
         isValid: true,
       },
-      lastName: {
+      author: {
         val: '',
         isValid: true,
       },
-      description: {
+      coverart: {
         val: '',
         isValid: true,
       },
-      rate: {
+      volumes: {
         val: null,
         isValid: true,
       },
@@ -110,16 +110,16 @@ export default {
         this.title.isValid = false;
         this.formIsValid = false;
       }
-      if (this.lastName.val === '') {
-        this.lastName.isValid = false;
+      if (this.author.val === '') {
+        this.author.isValid = false;
         this.formIsValid = false;
       }
-      if (this.description.val === '') {
-        this.description.isValid = false;
+      if (this.coverart.val === '') {
+        this.coverart.isValid = false;
         this.formIsValid = false;
       }
-      if (!this.rate.val || this.rate.val < 0) {
-        this.rate.isValid = false;
+      if (!this.volumes.val || this.volumes.val < 0) {
+        this.volumes.isValid = false;
         this.formIsValid = false;
       }
       if (this.areas.val.length === 0) {
@@ -136,9 +136,9 @@ export default {
 
       const formData = {
         first: this.title.val,
-        last: this.lastName.val,
-        desc: this.description.val,
-        rate: this.rate.val,
+        last: this.author.val,
+        desc: this.coverart.val,
+        volumes: this.volumes.val,
         areas: this.areas.val,
       };
 
