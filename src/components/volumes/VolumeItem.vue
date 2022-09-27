@@ -1,22 +1,25 @@
 <template>
   <li>
-    <h3>{{ title }}</h3>
-    <h4>{{ author }}</h4>
-    <h4>Number of Volumes: {{ volumes }}</h4>
+    <h4>{{ volume }}</h4>
+    <h4>owned {{ owned }}</h4>
+    <h4>read {{ read }}</h4>
+    <h4>comments{{ comments }}</h4>
+
+    <!-- <h4>Number of Volumes: {{ issue.read }}</h4> -->
 
     <!-- <div>
       <base-badge v-for="area in areas" :key="area" :type="area" :title="area"></base-badge>
     </div> -->
     <div class="actions">
-      <base-button mode="outline" link :to="editTitleLink">Contact</base-button>
-      <base-button link :to="volumesLink">View Volumes</base-button>
+      <!-- <base-button mode="outline" link :to="editTitleLink">Contact</base-button>
+      <base-button link :to="volumesLink">View Volumes</base-button> -->
     </div>
   </li>
 </template>
 
 <script>
 export default {
-  props: ['id', 'title', 'author', 'coverart', 'collected', 'volumes'],
+  props: ['volume', 'owned', 'read', 'comments', 'id'],
   computed: {
     // fullName() {
     //   return this.firstName + ' ' + this.lastName;
@@ -33,10 +36,11 @@ export default {
 
 <style scoped>
 li {
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   border: 1px solid #424242;
   border-radius: 12px;
   padding: 1rem;
+  list-style: none;
 }
 
 h3 {

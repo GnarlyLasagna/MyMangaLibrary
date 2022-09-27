@@ -18,6 +18,9 @@ export default {
             { volume: 1, owned: true, read: true, comments: '' },
             { volume: 2, owned: true, read: false, comments: '' },
             { volume: 3, owned: false, read: false, comments: '' },
+            { volume: 4, owned: true, read: true, comments: '' },
+            { volume: 5, owned: true, read: false, comments: '' },
+            { volume: 6, owned: false, read: false, comments: '' },
           ],
         },
         {
