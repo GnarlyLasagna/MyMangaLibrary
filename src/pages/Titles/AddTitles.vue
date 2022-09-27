@@ -1,7 +1,7 @@
 <template>
   <section>
     <base-card>
-      <h2>add title page</h2>
+      <h2>Add A New Title</h2>
       <ItemForm @save-data="saveData"></ItemForm>
     </base-card>
   </section>

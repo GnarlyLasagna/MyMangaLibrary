@@ -1,15 +1,16 @@
 <template>
   <section>
     <base-card>
-      <h2>{{ id }}</h2>
+      <!-- <h2>{{ id }}</h2> -->
       <h2>Title: {{ this.selectedTitle.title }}</h2>
       <h2>Volumes: {{ this.selectedTitle.volumes }}</h2>
-
-      <h2 v-for="issue in collection" :key="issue.id">
-        Volume num: {{ issue.volume }} read={{ issue.read }} owned={{
-          issue.owned
-        }}
-      </h2>
+      <!-- <base-card> -->
+      <div v-for="issue in collection" :key="issue.id">
+        <h4>Volume: {{ issue.volume }}</h4>
+        <h4>read={{ issue.read }}</h4>
+        <h4>owned={{ issue.owned }}</h4>
+      </div>
+      <!-- </base-card> -->
     </base-card>
   </section>
   <section></section>
