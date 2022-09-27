@@ -4,7 +4,6 @@
     <h4>owned {{ owned }}</h4>
     <h4>read {{ read }}</h4>
     <h4>comments{{ comments }}</h4>
-
     <!-- <h4>Number of Volumes: {{ issue.read }}</h4> -->
 
     <!-- <div>
